@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+
+      if ("serviceWorker" in navigator) {
+        navigator.serviceWorker.register("worker.js").then(function(reg) {
+          if (reg.installing) {
+            console.log("Service worker installing");
+          } 
+          else if (reg.waiting) {
+            console.log("Service worker installed");
+            rotateImage();
+          } 
+          else if (reg.active) {
+            console.log("Service worker active");
+            rotateImage();
+          }
+        }).catch(function(error) {
+          console.log("Registration failed with " + error);
+        });
+
+        navigator.serviceWorker.addEventListener("message", function(event) {
+          console.log("[Service Worker]", event.data);
+          if (event.data === "installed") {
+            rotateImage();
+          }
+        });
+      }
+
+      function rotateImage() {
+        var element = document.querySelector("main");
+        while (element.firstChild) {
+          element.removeChild(element.firstChild);
+        }
+        var newImageElement = createRandomImageElement();
+        document.querySelector("main").appendChild(newImageElement);
+      }
+
+      function createRandomImageElement() {
+        var images = ["image1.png", "image2.png", "image3.png"];
+        var randomImage = images[Math.floor(Math.random() * images.length)];
+        let imgElement = document.createElement("img");
+        imgElement.src = randomImage;
+        return imgElement;
+      }
+      
+      window.onload = function() {
+        setInterval(rotateImage, 5000);
+      }
+
+    </script>
+  </head>
+
+  <body>
+    <main>
+    </main>
+  </body>
+
+</html>
