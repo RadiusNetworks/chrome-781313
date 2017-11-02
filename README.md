@@ -11,7 +11,7 @@ The Chrome App is a single HTML page that loads a PWA in a `Webview`:
   </body>
 ```
 
-The [PWA code](pwa_webapp_code) is also contained in this repository. 
+The [PWA source code](pwa_webapp_code) is contained in this repository, and it can be loaded from this remote URL: https://s3.amazonaws.com/displaykit-assets-development/testing/swtest2/index.html
 
 ## Expected behavior
 
