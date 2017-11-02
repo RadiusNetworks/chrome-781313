@@ -21,7 +21,8 @@ You can launch the Chrome App on Chrome OS in kiosk mode and it will cache its r
 
 ## Observed Behavior
 
-If you turn off the network interface on the Chrome OS machine, unplug the ethernet cable (if it has a wired connection), or turn the power off on the wifi access point, the PWA will fail to load, resulting in a "Dinosaur" screen with a `ERR_INTERNET_DISCONNECTED` message.
+If you turn off the network interface on the Chrome OS machine, unplug the ethernet cable (if it has a wired connection), or turn the power off on the wifi access point, the PWA will **sometimes** fail to load, resulting in a "Dinosaur" screen with a `ERR_INTERNET_DISCONNECTED` message.
 
+*It's important to note that this offline behavior is not consistent: Sometimes it will load properly, sometimes it will not.*
 
 
