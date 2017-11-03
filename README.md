@@ -1,5 +1,7 @@
 # chrome-pwa-app-test
 
+[CRBUG#781313](https://bugs.chromium.org/p/chromium/issues/detail?id=781313)
+
 This is a test application to demonstrate problems with offline behavior when loading a progressive web app (PWA) inside of a Chrome App.
 
 The Chrome App is a single HTML page that loads a PWA in a `Webview`:
